@@ -1,0 +1,45 @@
+<div class='white-section'>
+        <div class='container login-register'>
+            <div class='login-section'>
+                <div class='login-form'>
+                    <input class='login-form-input' name='email' id='login-username' type='text' placeholder='Username , email'>
+                    <input class='login-form-input'  id='login-password' type='password' placeholder='Password'>
+                    <input type='submit' class='login-form-button' id='login-button' value='login' onclick='login()'>    
+                </div>
+            <p id='login-errors'></p>
+            </div>
+            <div class='register-form'>
+                <p>New to this website?</p>
+                <h2>Create an account</h2>
+                <div class='input-row'>
+                    <input class='register-form-input'  id='first-name' style='margin-right:10%' type='text' placeholder='First name'>
+                    <input class='register-form-input' id='last-name' type='text' placeholder='Last name'>
+                </div>  
+                <input class='register-form-input' name='email' id='register-email' type='text' placeholder='Email'> 
+                <input class='register-form-input' id='register-password' type="password" placeholder='Password'>
+                <input class='register-form-input' id='register-password-confirm' type="password" placeholder='Confirm password'>
+                <div class='gender'>
+                    <h5>Gender</h5>
+                    <div class='gender-radio'><input type='radio' checked=true name='gender' value='Male'><label>Male</label></div>
+                    <div class='gender-radio'><input type='radio' name='gender' value='Female'><label>Female</label></div>
+                    <div class='gender-radio'><input type='radio' name='gender' value='Others'><label>Others</label></div>
+                </div>
+                <p id='register-errors'></p>
+                <input class='register-form-input' id='register-button' type='submit' value='Create Account' onclick='register()'>
+            </div> 
+            <p id='copyright'>All rights reserved &copy; <a href='http://superdesigner.me'>superdesigner.me</a></p>
+
+        </div>
+    </div>
+   
+    <!--Background Image & Logo -->
+    <div class='background'>
+         <div class='background-overlay'></div>
+         <img alt="image couldn't load" class='background-image' src='assets/background.png'>
+
+    </div>
+
+    <div class='logo'>
+        <h1>YourZone</h1>
+        <p>Your favorite social website</p>
+    </div>
