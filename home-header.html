@@ -1,0 +1,69 @@
+
+        <style>
+                body {
+                    background-color:#F8F8F8;
+                }
+            </style>
+    <navbar>
+        <div id='navbar'>
+            <div class='navbar-control'>
+            <div class='nav'>
+                <div class='nav-item home-button'>
+                    <img src='assets/icons/home.svg'>   
+                    <p>Home</p>
+                </div>  
+                <div  class='nav-item explore-button'>
+                    <img src='assets/icons/explore.svg'>   
+                    <p>Explore</p>
+                </div>
+            </div>
+            <div class='logo'>
+                <h1>YourZone</h1>
+            </div>
+            <div class='search'>
+                <input type='text' id='search-input'>
+                <img src='assets/icons/search.svg'>
+            </div>
+            <div class='collapse-nav collapse'>
+                <div class='collapse-button'>
+                <span>&#8212;</span>
+                <span>&#8212;</span>
+            </div>
+                <div class='content'>
+                       <div class='nav-item home-button'>
+                           <img src='assets/icons/home.svg'>   
+                            <p>Home</p>
+                      </div>  
+                <div class='nav-item explore-button'>
+                    <img src='assets/icons/explore.svg'>   
+                    <p>Explore</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </navbar>
+    <script>
+       
+        const collapseDom = $('.collapse-nav');
+        $('.collapse-button').click(function(){
+            if(collapseDom.hasClass('collapse')) {
+                collapseDom.addClass('collapsed');
+                collapseDom.removeClass('collapse');
+               $('.navbar-control').animate({
+                marginLeft:'80%'
+            },'fast');
+            } else {
+                collapseDom.removeClass('collapsed');
+                collapseDom.addClass('collapse');
+                $('.navbar-control').animate({
+                marginLeft:'0%'
+                },'fast');
+            }
+        });
+
+        $('#explore-button').click(function(){
+            alert('working');
+        })  
+
+    </script>

@@ -1,4 +1,4 @@
-body , html , div,p {
+body , html , div,p,h1 {
     margin:0;
     padding:0;
     font-family:'Roboto';
@@ -11,6 +11,12 @@ body, html {
 input {
     background-color:#fcfcfc;
     color:#4e4e4e !important;
+}
+textarea {
+    resize:none;
+}
+    .textarea:focus {
+    outline:none;
 }
 .background {
     height:100%;
@@ -32,18 +38,24 @@ input {
     position:relative;
     right:10%; /* adjust image position */ 
 }
+.login-logo {
+    position: relative;
+    width:50%;
+    top:8%;
+}
 .logo {
     color:white;
     text-align: center;
-    width:50%;
-    position: relative;
-    top:8%;
+    cursor:default;
 }
 .logo h1 {
     font-family:'Ranga';
-    font-size:calc(3em + 3vw);
-    margin-bottom:0px;
-    line-height: 90px;
+    font-size:42px;
+}
+.login-logo h1 {
+    font-size:calc(3em + 3vw) !important;
+    margin-bottom:0px !important;
+    line-height: 90px !important;
 }
 .logo p{
     font-weight:200;
@@ -163,20 +175,79 @@ input {
     font-size:80%;
     margin-left:5%;
 }
+@media only screen and (max-width:1138px) {
+    .posts {
+        position:relative !important;    
+        width:100% !important;
+        left:auto !important;
+        top:auto !important;
+        margin:0 !important;
 
+    }
+    .right-component {
+        position:static !important;
+        margin:0 !important;
+        top:auto !important;
+        width:100% !important;
+        height:120px !important;
+        overflow:hidden !important;
+        border-radius: 0 !important;    
+    }
+    .post {
+        position: relative !important;
+        width: 100% !important;
+        left:0 !important;
+        top:auto !important;
+        border-radius: 0 !important;    
+        height:170px !important;
+        margin:0 !important;
+        margin-top:30px !important;
+    }
+    .post textarea {
+        height:40% !important;
+        margin-top:20px;
+    }
+    .animation-wrapper {
+        margin-top:64px;
+        height:330px !important;
+    }
+    .wrapper {
+        height: 340px !important; 
+        
+    }
+    .right-component #user-info {
+        border:0 !important;
+    }
+         
+    .profile  {
+        width:100% !important;
+        border-radius:0 !important;
+        position: relative !important; 
+        top:64px !important;
+    }
+    
+}
 @media only screen and (max-width:1048px) {
     .white-section {
         width:70%;
     }
-    .logo {
+    .logo-login {
         width:30%;
     }
+    .nav {
+        display:none;
+    }
+    .collapse-nav  {
+        display:block !important;
+    }
+
 }
+
 @media only screen and (max-width:720px) {
     .white-section {
         width:100%;
     }
-    .logo {
+    .logo-login {
         display:none;
     }
     .login-form {
@@ -200,6 +271,24 @@ input {
     #register-errors {
         margin-left:20%;
     }
+    .username-modal {
+        width:100% !important;
+        border-radius:0 !important;
+        top:8% !important;
+    }
+    .search input {
+        width:70% !important;
+    }
+    .posts {
+        padding-top:30px !important;
+        border-radius:0;
+    }
+    .my-posts {
+        padding:0 20px!important;
+    }
+    .login-logo {
+        display: none !important;
+    }
 }
 #login-errors {
     margin-left:5%;
@@ -215,4 +304,608 @@ input {
 .register-incorrect {
     border-color:#FF3636 !important;
 }
+#navbar {
+    position: absolute;
+    width:100%;
+    height:64px;
+    background-color:#0059d1;
+    box-shadow: 0px 2.5px 2px rgba(0, 0, 0, 0.25);    
+    overflow: none;
+    z-index:4;
+}
+.nav {
+    position: absolute;
+    left:5%;
+    top:20px;
+    width:20%;
+}
+.nav-item {
+    position: relative;
+    width:50%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 26px;
+    color:white;
+    cursor: pointer;
+    z-index:10;
+}
+.nav-item p{
+    display:inline-block;   
+}
+.nav-item img {
+    width:22px;
+    margin-right:5px;   
+}
+.search {
+    position: absolute;
+    right:5%;
+    top:18px;
+    border-radius:50px;
+    padding:0 20px;
+    width:50px;
+    height:30px;
+    overflow:hidden
+}
+.search img {
+    float:right;
+    width:30px;
+    cursor: pointer;
+}
+.search input {
+    float:left;
+    border:0;
+    background-color:transparent;
+    height:30px;
+    width:90%;
+    display:none;
 
+}
+.search input:focus {
+    outline:none;
+}
+.username-modal {
+    position: relative;
+    width: 728px;
+    height: 450px;
+    top:160px;
+    margin:0 auto;
+    background: #FFFFFF;
+    border: 1px solid #C9C9C9;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding:0 5%;
+}
+.username-modal h1 {
+    margin-top:60px ;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 28px;
+}
+.username-modal p {
+    margin-top:20px;
+    color: #565656;
+}
+.username-input p{
+    margin-top:10px;
+    font-weight:bold;
+    display:inline-block;
+}
+.username-input input {
+    margin-left:20px;
+    display:inline-block;
+    width:45%;
+    height:28px;
+    border:0;
+    background: #EAEAEA;
+    border-radius: 5px;
+    padding:3px 10px;
+}
+.username-input input:focus {
+    outline:none;
+}
+.username-input {
+    margin-bottom:30px;
+}
+.username-modal span {
+    font-weight:bold;
+    color:#000000;
+    margin-top:40px;
+
+}
+#username-submit {
+    position: absolute;
+    bottom:50px;
+    right:80px;
+    background: #0059D1;
+    border:0;
+    width:100px;
+    height:40px;
+    color:white;
+}
+.change-image {
+    position: relative;
+    width:130px;
+    height:130px;   
+    margin-top:40px;
+    overflow:hidden;
+}
+.change-image img {
+    width:100%;
+}
+#upload-button {
+    width:34px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    cursor:pointer;
+}
+.collapse-nav {
+    position:absolute;  
+    width:50px;
+    height:50px;
+    top:8px;
+    left:5%;
+    text-align: center;
+    cursor: pointer;
+    display:none;
+    padding-top:13px;
+
+}
+.collapse-nav span{
+    font-size:50px;
+    line-height:1px;
+    color:white;
+    margin:0;
+}
+.navbar-control{
+    position: relative;
+    padding-top:10px;
+    width:100%;
+    height:100%;
+}
+.content {
+    position:absolute;
+    height:100%;
+    width:400px;
+    right:100%;
+    top:0;
+}
+.content .nav-item {
+    height:100%;
+    display:inline-block;
+    width:40%;
+    margin-top:10px;
+    font-size:20px;
+}
+.content .nav-item img {
+    width:24px;
+}
+.upload-container input[type='file'] {
+    display: none;
+  } 
+.right-component {
+    position: fixed;
+    width: 290px;
+    height: 340px; 
+    right: 5%;
+    top: 100%; /* top 25% */
+    opacity:0.1;    
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow:auto;
+}
+.right-component #user-info {
+    width:100%;
+    border-bottom: 1px solid #DFDFDF;
+    height:30%;
+    padding-top:5%;
+    padding-left:10%;
+}
+.right-component #user-info img {
+    width:80px;
+    height:80px;
+    border-radius:50px;
+    display:inline-block;
+    }
+.right-component #user-info #contact-info {
+    display:inline-block;
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+    height:70px;
+    margin-left:10px;
+    vertical-align: middle;
+}
+.right-component #user-info #contact-info #username{
+    font-weight: bold;
+    font-size: 17px;
+    color: #C5C5C5 ;
+
+}
+.right-component .button {
+    width:100%;
+    height:17.5%;
+    border-bottom: 1px solid #DFDFDF;
+    cursor: pointer;
+}
+.right-component .button span {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    color: #575757;
+    position: relative;
+    top:30%;
+    left:15%;
+}
+.right-component img {
+    width:24px;
+    margin-right:10px;
+}
+.animation-wrapper {
+    height:100%;
+    overflow:hidden;
+    position:relative;
+}
+#home {
+    position: absolute;
+    top:20%;
+    left:15%;
+    opacity: 0;
+}
+.post {
+    position: fixed;
+    width: 290px;
+    height: 250px; 
+    right:5%;
+    top:55%; /* 15% */
+    opacity: 0;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow:hidden;
+}
+.post .header {
+    height:20%;
+    background-color:#498BE4;
+}
+.post .header span {
+    position: absolute;
+    right:10%;  
+    top:5%;
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+}
+.post textarea {
+    height:55%;
+    width:90%;
+    display:block;
+    margin:0 auto;
+    margin-top:5%;
+    border-radius:5px;
+    background-color:#F4F4F4;
+    border:0;
+    padding:10px 20px;
+    z-index:5;
+}
+#post-submit {
+    position:absolute;
+    right:5%;
+    width:25px;
+    bottom: 5%;
+    cursor: pointer;
+}
+.posts {
+    position: absolute;
+    width: 53%;
+    min-height: 984px;
+    height:auto;
+    left: 15%;
+    top: 15%;   
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding:0 5%;
+}
+.posts .header {
+    overflow:hidden;
+    height:10%;
+    margin-bottom:16%;
+}
+.posts .header h1 {
+    position:absolute;
+    top:-10px;
+    font-size:24px;
+    background-image: url(assets/badge.png);
+    background-repeat: no-repeat;
+    width:120px;
+    height:120px;
+    text-align: center;
+    padding-top:20px;
+    color:white;
+}
+.post-box {
+    position: relative;
+    margin-top:50px;
+    padding-bottom:20px;
+    border-bottom: 1px solid #c6c6c6;
+    opacity:0;
+}
+.post-box .name {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight:bold;
+    cursor: pointer;
+}
+.post-box .username {
+    font-size: 16px;
+    line-height: 21px;
+    margin-left:10px;
+    color: #B1B1B1;
+
+}
+.post-box .post-content {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+        margin-top:16px;
+color: #474747;
+}
+.post-box .buttons {
+    float:left;
+}
+.post-box .view{
+    float:right;
+    color:#B3B3B3;
+}
+.post-box .view span {
+    margin-right:20px;
+    cursor: pointer;
+}
+.post-box-bottom {
+    height:30px;
+    margin-top:30px;
+
+}
+.post-box .buttons div {
+    display:inline-block;
+    margin-right:10px;
+    cursor: pointer;
+}
+.post-box .buttons label {
+    margin-left: 5px;
+    margin-right:20px;
+    cursor: pointer;
+}
+.button-like {
+    color:#EB5757;
+}
+.button-comment {
+    color:#56CCF2;
+}
+.button-share {
+    color:#6FCF97;
+}
+.button-shared {
+    color:#6FCF97;
+}
+#post-1{
+    top:600px;
+    opacity:0;
+}
+#post-2{
+    top:600px;
+    opacity:0;
+}
+#post-3{
+    top:600px;
+    opacity:0;
+}
+.post-image {
+    position: absolute;
+    height:90px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index:-1;
+    display:none;
+}
+.button-like img {
+    width:16px;
+}
+.button-liked {
+    color:#EB5757;
+}
+.button-liked img {
+    width:16px;
+
+}
+.custom-alert {
+    position:fixed;
+    top:10%;
+    background-color:#3a3a5a;
+    opacity:0.7;
+    margin:0 auto;
+    width:300px;
+    left:50%;
+    margin-left: -150px;
+    height:4%;
+    color:white;
+    text-align: center;
+    padding-top:4px;
+    font-size:18px;
+    display: none;
+}
+.comments { 
+    position: relative;
+    width:100%;
+    margin-top:10px;
+    height:0;
+    overflow: hidden;
+}
+.comments .comment {
+    background-color:#e6eeef;
+    height:80px;
+    border-radius:15px;
+    padding:5px 10px;
+    margin-bottom:20px; 
+}
+.comments .comment .comment-user-info {
+    height:30px;
+}
+.comments .comment .comment-user-info p {
+    width:40%;
+    font-weight:bold;
+}
+.comments .comment .comment-user-info span {
+    color:#b7c9e1;
+}
+.comment-input {
+    padding:0 3%;
+    background-color:#cfd8e4;
+    border-radius:15px;
+    height:50px;
+    padding-top:10px;
+}
+.comment-input input {
+    width:90%;
+    border:0;
+    background-color:transparent;
+}
+.comment-input input:focus {
+    outline:none;
+}
+.comment-submit {
+    background-color:#498be4;
+    color:white;
+    border:0px;
+    margin-top:3px;
+    border-radius:15px;
+}
+.follow-button {
+    color:#498be4;
+    border:2px solid #498be4;
+    padding:10px;   
+    border-radius:5px;
+    transition:0.3s;
+}
+.follow-button:hover {
+    background-color:#498be4;
+    color:white;
+}
+
+.followed-button:hover {
+    background-color:#d7423c;
+}
+.followed-button {
+    background-color:#498be4;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    transition:0.6s;
+}
+.profile {
+    position: relative;
+    width: 60%;
+    min-height: 984px;
+    height:auto;
+    top: 15%;   
+    margin:0 auto;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.top-header {
+    background-color:#498be4;
+    height:150px;
+    padding:0 40px;
+    padding-top:20px;
+}
+.top-header img {
+    border:7px solid white;
+    border-radius:50%;
+    width:110px;
+    height:110px;
+}
+.top-header .info {
+    display:inline-block;
+    margin-left:40px;
+    color:white;
+    font-size:20px;
+}
+.top-header .username {
+    font-size:16px;
+    color:#e5e5e5;
+}
+.top-header .gender {
+    float:right;
+    color:white;
+    font-style:italic;
+    margin-top:20px;
+}
+.my-posts {
+    padding:0 60px;
+}
+.my-posts .post-box {
+    opacity: 1 !important;
+}
+.post-box a {
+    color:black;
+}
+.post-box a:hover {
+    text-decoration: none;
+}
+.wrapper {
+    height:100%;
+}
+#follower {
+    display:none;
+}
+#following {
+    display:none;
+}
+.show-follow .follower {
+    height:25%;
+    padding:10px 20px;
+}
+.show-follow .follower img {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+}
+.show-follow .follower .follower-info {
+    position:relative;
+    top:10px;
+    display:inline-block;
+}
+.show-follow .follower .follower-info .name{
+    color:black !important;
+    font-weight: bold !important;
+}
+.show-follow button {
+    position: absolute; 
+    top:3%;
+    right:3%;
+    background: transparent;
+    border:0;
+    color:#498be4;
+}
+.show-follow button:focus {
+    outline: nine;
+}
+.show-follow h1 {
+    padding-top:2px;
+    padding-left:20px;
+    border-bottom:1px solid gray;
+}
+.gray {
+    height:1px;
+    width:75%;
+    background-color:gray;
+    margin:0 auto;
+    margin-top:10px;
+}
